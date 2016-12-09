@@ -51,5 +51,9 @@ public class UmengAnalyticsModule extends ReactContextBaseJavaModule {
     public void setDebugMode(Boolean value) {
         MobclickAgent.setDebugMode(value);
     }
-
+    @ReactMethod
+    public void attributeEvent(String event,HashMap<String, String> attributes )
+    {
+        MobclickAgent.onEvent(getCurrentActivity(), event, attributes);
+    }
 }
